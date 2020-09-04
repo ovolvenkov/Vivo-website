@@ -40,6 +40,34 @@ a {
 	justify-content: space-between;
 }
 
+.nav_a {
+	display: inline-block;
+    line-height: 1;
+    position:relative;
+}
+
+.nav_a:after {
+    background-color: #299EF3;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    left:50%;
+    margin-top: 6px;
+    position:absolute;
+    -webkit-transition: width .3s;
+    -moz--transition: width .3s;
+    transition: width .3s;
+    -webkit-transform:translateX(-50%);
+    -moz-transform:translateX(-50%);
+    transform:translateX(-50%);
+}
+
+.nav_a:hover:after,
+.nav_a:focus:after {
+    width: 80%;
+}
+
 .main_info {
 
 }
@@ -118,6 +146,11 @@ a {
 .about_info {
 	width: 420px;
 	margin-top: -20px;
+	margin-left: 10px;
+}
+
+.about_photo {
+	margin-bottom: 70px;
 }
 
 .about_header {
@@ -157,4 +190,35 @@ a {
 	font-size: 16px;
 	line-height: 19px;
 	text-align: justify;
+}
+
+.services {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.services_header {
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: capitalize;
+}
+
+.services_header:after {
+	content: "";
+	display: inline-block;
+	width: 217px;
+	position: absolute;
+	border: 1px solid #E5E5E5;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+
+.services_photo {
+	margin-top: 70px;
+}
+
+.service_img {
+	width: 288px;
+	margin-left: -4px;
 }
