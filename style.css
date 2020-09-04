@@ -1,14 +1,11 @@
-html, body{
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+
 
 body {
 	font-family: 'Karla', sans-serif;
 	font-size: 16px;
 	color: #fff;
 	margin: 0 auto;
+	background: #202731;
 }
 
 a {
@@ -23,7 +20,7 @@ a {
 }
 
 .header {
-	background: #202731;
+
 }
 
 .header_top {
@@ -43,14 +40,17 @@ a {
 	justify-content: space-between;
 }
 
+.main_info {
+
+}
+
 .header_bottom {
-	background: url(img/header_bg_img.png) no-repeat center/cover;
-	width: 1309px;
-	min-height: 630px;
-	margin-top: 18px;
+	position: relative;
+	z-index: 10;
 }
 
 .header_text {
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -62,10 +62,99 @@ a {
 }
 
 .main_text{
-
+	font-weight: bold;
 }
 
 .main_description {
-	font-size: 20px;
+	font-size: 23px;
 	line-height: 1.4;
+	margin-top: 33px;
+	text-align: center;
+}
+
+.main_btn {
+	font-size: 16px;
+	line-height: 19px;
+	border: 1px solid #fff;
+	padding: 22px 58px;
+	text-align: center;
+	margin-top: 55px;
+}
+
+.background_img {
+	position: absolute;
+	right: 0px;
+	top: 98px;
+	z-index: 1;
+
+}
+
+
+.about_us {
+	padding-top: 325px;
+
+}
+
+.about_wrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+ .about_img {
+ 	position: relative;
+ 	z-index: 30;
+ }
+
+.about_border {
+	position: absolute;
+	transform: translate( 35%,-93%);
+	width: 333px;
+	height: 455px;
+	border: 1px solid #E5E5E5;
+	z-index: 20;
+}
+
+.about_info {
+	width: 420px;
+	margin-top: -20px;
+}
+
+.about_header {
+	font-size: 36px;
+	line-height: 42px;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.about_header:after {
+	content: "";
+	display: inline-block;
+	border: 1px solid #E5E5E5;
+	width: 102px;
+	margin-left: 60px;
+	margin-bottom: 9px;
+
+}
+
+.about_description {
+	margin-top: 43px;
+	line-height: 19px;
+	text-align: justify;
+}
+
+.mission_header {
+	margin-top: 20px;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	text-transform: capitalize;
+}
+
+.mission_description {
+	margin-top: 20px;
+	font-size: 16px;
+	line-height: 19px;
+	text-align: justify;
 }
