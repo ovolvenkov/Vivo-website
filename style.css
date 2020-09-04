@@ -1,0 +1,71 @@
+html, body{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+body {
+	font-family: 'Karla', sans-serif;
+	font-size: 16px;
+	color: #fff;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.container {
+	max-width: 1440px;
+	padding: 0 30px;
+	margin: 0 auto;
+}
+
+.header {
+	background: #202731;
+}
+
+.header_top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 21px;
+}
+
+.logo {
+
+}
+
+.nav {
+	width: 800px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header_bottom {
+	background: url(img/header_bg_img.png) no-repeat center/cover;
+	width: 1309px;
+	min-height: 630px;
+	margin-top: 18px;
+}
+
+.header_text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-size: 64px;
+	line-height: 1.4;
+	padding-top: 212px;
+
+}
+
+.main_text{
+
+}
+
+.main_description {
+	font-size: 20px;
+	line-height: 1.4;
+}
