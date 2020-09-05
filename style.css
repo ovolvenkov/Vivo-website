@@ -324,8 +324,30 @@ cursor: pointer;
 	margin-bottom: 75px;
 }
 
-.product_li:hover {
+.icon_text {
+	position: relative;
+}
+
+.icon_text:after  {
+	display: block;
+	position: absolute;
+	margin-top: 9px;
+	left: 0;
+	width: 0;
+	height: 2px; 
+	background-color:  #F1B341; 
+	content: "";
+	transition: width 0.3s ease-out; 
+
+}
+
+.icon_text :hover:after{
+	width: 100%;
 	cursor: pointer;
+}
+
+.icon_text:hover {
+
 }
 
 .icon_img {
