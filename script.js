@@ -1,6 +1,66 @@
 'use strict'
 
-function menu() {
+function playVideo() {
+	const videoButton = document.querySelector('.video_btn');
+	const videoFrame = document.querySelector('.video_frame');
+
+
+
+	videoButton.addEventListener('click', (e)=>{
+
+		videoFrame.style.display = 'block';
+
+	})
+}
+
+playVideo()
+
+
+
+
+function reduceMenuSize() {
+	const headerTop = document.querySelector('.header_top');
+	document.addEventListener('scroll',(e)=>{
+		if(window.pageYOffset > 0){
+			headerTop.style.paddingTop = '10px';
+			headerTop.style.transition = 'padding-top 0.3s ease-in-out';
+		} else if (window.pageYOffset == 0) {
+			headerTop.style.paddingTop = '21px'
+			headerTop.style.transition = 'padding-top 0.3s ease-in-out';
+		}
+	})
+}
+
+reduceMenuSize()
+
+
+
+function animateAboutText() {
+	let aboutText = document.querySelector('about_text');
+	if(window.pageYOffset > 600) aboutText.style.position = 'static'
+
+
+	/*position: absolute;
+	right: -800px;
+	transition: right 1s;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function menu() {
 	let menuContainer = document.querySelector('.menu .container');
 	let menuUl = document.querySelector('.menu_ul');
 	let arrow = document.querySelector('.menu_arrow');
@@ -25,39 +85,14 @@ function menu() {
 		}
 
 	} 
-}
+}*/
 
-menu()
-
-
+//menu()
 
 
-function rotateElement(selectorParentElements, selectorChildElements) {
 
-	const parentElements = document.querySelectorAll(selectorParentElements);
 
-	for (var i = 0; i < parentElements.length; i++) {
-		const parentElement = parentElements[i];
-		parentElement.addEventListener('mousemove', startRotate);
-		parentElement.addEventListener('mouseout', stopRotate);
-	}
 
-	function startRotate(e) {
-		const childElement = this.querySelector(selectorChildElements);
-		const halfHeightEl = childElement.offsetHeight/2;
-
-		childElement.style.transform = `rotateX(${(e.offsetY - halfHeightEl)/5}deg) rotateY(${(e.offsetX - halfHeightEl)/5}deg)`;
-	}
-
-	function stopRotate(e) {
-		const childElement = this.querySelector(selectorChildElements);
-		childElement.style.transform = 'rotate(0)';
-	}
-}
-
-// эффект для картинок статей//rotateElement('.article_photo', 'a img');
-
-// эффект для картинок популярные статьи//rotateElement('.popular_article_photo', 'a img');
 
 
 

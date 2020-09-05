@@ -20,6 +20,11 @@ a {
 }
 
 .header {
+	position: fixed;
+	background-color: white;
+	width: 100%;
+	background-color: rgba(32, 39, 49, 0.5);
+	z-index: 100;
 
 }
 
@@ -28,6 +33,8 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 21px;
+	padding-bottom: 10px;
+	transition: padding-top 0.3s ease-in-out;
 }
 
 .logo {
@@ -69,15 +76,15 @@ a {
 }
 
 .main_info {
-
+		margin-bottom: 350px;
 }
 
-.header_bottom {
+.main_wrapper {
 	position: relative;
 	z-index: 10;
 }
 
-.header_text {
+.main_header_text {
 	text-align: center;
 	display: flex;
 	align-items: center;
@@ -85,7 +92,7 @@ a {
 	flex-direction: column;
 	font-size: 64px;
 	line-height: 1.4;
-	padding-top: 212px;
+	padding-top: 310px;
 
 }
 
@@ -96,17 +103,49 @@ a {
 .main_description {
 	font-size: 23px;
 	line-height: 1.4;
-	margin-top: 33px;
+	margin-top: 18px;
 	text-align: center;
 }
 
-.main_btn {
+.video_btn {
 	font-size: 16px;
 	line-height: 19px;
 	border: 1px solid #fff;
 	padding: 22px 58px;
 	text-align: center;
 	margin-top: 55px;
+
+
+
+
+ display: block;
+ background-image: linear-gradient(to left,transparent,transparent 50%,#299EF3 50%,#299EF3);
+ background-position: 100% 0;
+ background-size: 200% 100%;
+ transition: all .25s ease-in;
+
+
+}
+
+.video_btn:hover {
+background-position: 0 0;
+color:#fff;
+cursor: pointer;
+}
+
+
+
+
+
+
+
+.video_frame {
+	position: absolute;
+	display: none;
+}
+
+.video_frame iframe{
+
 }
 
 .background_img {
@@ -119,7 +158,7 @@ a {
 
 
 .about_us {
-	padding-top: 325px;
+
 
 }
 
@@ -127,6 +166,7 @@ a {
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+
 }
 
  .about_img {
@@ -144,13 +184,15 @@ a {
 }
 
 .about_info {
-	width: 420px;
-	margin-top: -20px;
+	width: 450px;
+	margin-top: -15px;
 	margin-left: 10px;
+
 }
 
 .about_photo {
 	margin-bottom: 70px;
+	margin-left: 50px;
 }
 
 .about_header {
@@ -164,17 +206,20 @@ a {
 .about_header:after {
 	content: "";
 	display: inline-block;
-	border: 1px solid #E5E5E5;
+	border-bottom: 1px solid #E5E5E5;
+	height: 1px;
 	width: 102px;
 	margin-left: 60px;
 	margin-bottom: 9px;
+	font-weight: normal;
 
 }
 
 .about_description {
 	margin-top: 43px;
+	font-size: 16px;
 	line-height: 19px;
-	text-align: justify;
+
 }
 
 .mission_header {
@@ -197,21 +242,25 @@ a {
 	text-align: center;
 }
 
+.services .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .services_header {
 	font-weight: bold;
 	font-size: 36px;
 	line-height: 42px;
 	text-transform: capitalize;
+	margin-right: 14px;
 }
 
-.services_header:after {
-	content: "";
-	display: inline-block;
+.services_line {
 	width: 217px;
-	position: absolute;
-	border: 1px solid #E5E5E5;
-	margin-top: 20px;
-	margin-left: 20px;
+	border-bottom: 1px solid #E5E5E5;
+
+
 }
 
 .services_photo {
@@ -222,3 +271,5 @@ a {
 	width: 288px;
 	margin-left: -4px;
 }
+
+
