@@ -249,8 +249,7 @@ html.modal-active, body.modal-active {
 
 
 .about_us {
-	transform: translateY(100%);
-	transition: transform .5s;
+	
 }
 
 .about_wrapper {
@@ -586,8 +585,13 @@ html.modal-active, body.modal-active {
 .tel {
 	width: 450px;
 	line-height: 35px;
-
-
+	color: #fff;
+	transition: color 0.3s;
 }
+
+.tel a:hover {
+	color:#299EF3;
+	transition: color 0.3s;
+} 
 
 
