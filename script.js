@@ -35,17 +35,27 @@ reduceMenuSize()
 
 
 
-function animateAboutText() {
-	let aboutText = document.querySelector('about_text');
-	if(window.pageYOffset > 600) aboutText.style.position = 'static'
+function animateAboutSection() {
+	let aboutPhoto = document.querySelector('.about_photo');
+	let about_info = document.querySelector('.about_info');
+
+	document.addEventListener('scroll', (e)=>{
+		if(window.pageYOffset > 400) {
+			aboutPhoto.classList.add('active_about_photo');
+			about_info.style.transform = 'scale(1)'
+
+		}
+		else if(window.pageYOffset < 400) {
+			aboutPhoto.classList.remove('active_about_photo')
+			about_info.style.transform = 'scale(0)'
+		}
+	})
 
 
-	/*position: absolute;
-	right: -800px;
-	transition: right 1s;*/
+
 }
 
-
+animateAboutSection()
 
 
 

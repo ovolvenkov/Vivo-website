@@ -181,12 +181,23 @@ cursor: pointer;
 	width: 450px;
 	margin-top: -15px;
 	margin-left: 10px;
+	transform: scale(0);
+	transition: transform .8s;
 
 }
 
 .about_photo {
 	margin-bottom: 70px;
 	margin-left: 50px;
+	  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0s linear 0.5s;
+}
+
+.active_about_photo {
+	 opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
 }
 
 .about_header {
@@ -260,14 +271,53 @@ cursor: pointer;
 
 .services_photo {
 	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	justify-content: center;
 	margin-top: 70px;
 }
 
-.service_img {
+.service {
 	width: 288px;
-	margin-left: -4px;
+	min-height: 515px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 19px;
+
+}
+
+
+.service_photo1 {
+	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
+								rgba(32, 39, 49, 0.75) 88.37%), 
+								url(img/service1.png) no-repeat center/cover;
+}
+
+.service_photo2 {
+	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
+								rgba(32, 39, 49, 0.75) 88.37%), 
+								url(img/service2.png) no-repeat center/cover;
+}
+
+
+.service_photo3 {
+	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
+								rgba(32, 39, 49, 0.75) 88.37%), 
+								url(img/service3.png) no-repeat center/cover;
+}
+
+.service_photo4 {
+	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
+								rgba(32, 39, 49, 0.75) 88.37%), 
+								url(img/service4.png) no-repeat center/cover;
+}
+
+.service_photo5 {
+	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
+								rgba(32, 39, 49, 0.75) 88.37%), 
+								url(img/service5.png) no-repeat center/cover;
 }
 
 .products {
@@ -331,17 +381,17 @@ cursor: pointer;
 .icon_text:after  {
 	display: block;
 	position: absolute;
-	margin-top: 9px;
+	margin-top: 5px;
 	left: 0;
 	width: 0;
-	height: 2px; 
-	background-color:  #F1B341; 
+	height: 1px; 
+	background-color:  #2A2B32;; 
 	content: "";
 	transition: width 0.3s ease-out; 
 
 }
 
-.icon_text :hover:after{
+.icon_text:hover:after{
 	width: 100%;
 	cursor: pointer;
 }
