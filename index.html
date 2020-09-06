@@ -184,17 +184,66 @@
 		</section>
 
 		<section class="contact">
-			<div class="contact_text">
-				<div class="contact_header">
-					Contact us
+			<div class="container">
+				<div class="contact_text">
+					<div class="contact_header_wrapper">
+						<div class="contact_header">
+							Contact us
+						</div>
+						<div class="line"></div>
+					</div>
+					<div class="contact_description">
+						Interested in working together or have any questions?</br> Feel free to send us a message and we’ll get back to you as soon</br> as possible.
+					</div>
 				</div>
-				<div class="line"></div>
-				<div class="contact_description">
-					Interested in working together or have any questions? Feel free to send us a message and we’ll get back to you as soon as possible.
+				<div class="contact_form">
+					<form action="send.php" method="post">
+						<input type="text" name="name" required placeholder="Your name"><br>
+						<input type="text" name="email" placeholder="Email"><br>
+						<input type="text" name="phone"required  placeholder="Phone"><br>
+						<textarea rows="1" name="message" placeholder="Your message"></textarea><br>
+						<input type="submit" name="submit" value="Send">
+					</form>
 				</div>
 			</div>
-			<div class="contact_form"></div>
 		</section>
+
+		<section class="animate_line">
+			<div class="marquee">
+				<img src="img/logo_ticker.svg" alt="logo">
+				<img src="img/logo_ticker.svg" alt="logo">
+				<img src="img/logo_ticker.svg" alt="logo">
+				<img src="img/logo_ticker.svg" alt="logo">
+				<img src="img/logo_ticker.svg" alt="logo">
+				<img src="img/logo_ticker.svg" alt="logo">
+				<img src="img/logo_ticker.svg" alt="logo">
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="container">
+				<div class="decorate_line"></div>
+				<div class="connection">
+					<div class="tel inqueries">
+						<span>General inqueries:</span></br>
+						<a href="mailto:info@vivodistributorsinc.com">info@vivodistributorsinc.com</a></br>
+						<a href="tel:+13105135151">+13105135151</a></br>
+					</div>
+					<div class="tel sales_department">
+						<span>Sales department:</span></br>
+						<a href="tel:+13105135151">+13105135151</a></br>
+						<a href="tel:+13107280117">+13107280117</a></br>
+						<a href="mailto:info@vivodisributorsinc.com">info@vivodisributorsinc.com</a>
+					</div>
+					<div class="tel purchasing_department">
+						<span>Purchasing department:</span></br>
+						<a href="tel:+13105135151">+13105135151</a></br>
+						<a href="tel:+13109359817">+13109359817</a></br>
+						<a href="mailto:purchasing@vivodistributorsinc.com">purchasing@vivodistributorsinc.com</a>
+					</div>
+				</div>
+			</div>
+		</footer>
 
 	<script src="script.js"></script>
 	</body>

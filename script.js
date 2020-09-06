@@ -41,13 +41,13 @@ function animateAboutSection() {
 	const aboutUs = document.querySelector('.about_us');
 
 	document.addEventListener('scroll', (e)=>{
-		if(window.pageYOffset > 400) {
+		if(window.pageYOffset > 300) {
 			aboutPhoto.classList.add('active_about_photo');
 			about_info.style.transform = 'scale(1)'
 			aboutUs.style.transform = 'translateY(0%)'
 
 		}
-		else if(window.pageYOffset < 400) {
+		else if(window.pageYOffset < 300) {
 			aboutPhoto.classList.remove('active_about_photo')
 			about_info.style.transform = 'scale(0)'
 						aboutUs.style.transform = 'translateY(100%)'
@@ -91,25 +91,14 @@ function modal() {
 		
 
 	}))
-
-
-/*	$('.button').click(function(){
-  var buttonId = $(this).attr('id');
-  $('#modal-container').removeAttr('class').addClass(buttonId);
-  $('body').addClass('modal-active');
-})
-
-$('#modal-container').click(function(){
-  $(this).addClass('out');
-  $('body').removeClass('modal-active');
-});*/
 }
-
 
 modal()
 
 
+function animateSlideLine() {
 
+}
 
 
 
@@ -141,6 +130,8 @@ modal()
 }*/
 
 //menu()
+
+
 
 
 

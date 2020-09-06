@@ -387,44 +387,45 @@ html.modal-active, body.modal-active {
 
 
 .service_photo1 {
-	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
-								rgba(32, 39, 49, 0.75) 88.37%), 
-								url(img/service1.png) no-repeat center/cover;
+	background: linear-gradient(159.18deg, 
+		rgba(32, 39, 49, 0.75) 5.56%, 
+		rgba(32, 39, 49, 0.75) 88.37%), 
+		url(img/service1.png) no-repeat center/cover;
 }
 
 .service_photo2 {
-	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
-								rgba(32, 39, 49, 0.75) 88.37%), 
-								url(img/service2.png) no-repeat center/cover;
+	background: linear-gradient(159.18deg,
+	 	rgba(32, 39, 49, 0.75) 5.56%, 
+		rgba(32, 39, 49, 0.75) 88.37%), 
+		url(img/service2.png) no-repeat center/cover;
 }
 
 
 .service_photo3 {
-	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
-								rgba(32, 39, 49, 0.75) 88.37%), 
-								url(img/service3.png) no-repeat center/cover;
+	background: linear-gradient(159.18deg, 
+		rgba(32, 39, 49, 0.75) 5.56%, 
+		rgba(32, 39, 49, 0.75) 88.37%), 
+		url(img/service3.png) no-repeat center/cover;
 }
 
 .service_photo4 {
-	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
-								rgba(32, 39, 49, 0.75) 88.37%), 
-								url(img/service4.png) no-repeat center/cover;
+	background: linear-gradient(159.18deg, 
+		rgba(32, 39, 49, 0.75) 5.56%, 
+		rgba(32, 39, 49, 0.75) 88.37%), 
+		url(img/service4.png) no-repeat center/cover;
 }
 
 .service_photo5 {
-	background: linear-gradient(159.18deg, rgba(32, 39, 49, 0.75) 5.56%, 
-								rgba(32, 39, 49, 0.75) 88.37%), 
-								url(img/service5.png) no-repeat center/cover;
+	background: linear-gradient(159.18deg, 
+		rgba(32, 39, 49, 0.75) 5.56%, 
+		rgba(32, 39, 49, 0.75) 88.37%), 
+		url(img/service5.png) no-repeat center/cover;
 }
 
 .products {
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-}
-
-.products_inner {
-
 }
 
 .products_header {
@@ -501,8 +502,92 @@ html.modal-active, body.modal-active {
 	margin-right: 15px;
 }
 
+.contact .container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 164px;
+	margin-bottom: 159px;
+	max-width: 1141px;
+}
+
+.contact_text {
+	width: 562px;
 
 
 
+}
+
+.contact_header_wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 446px;
+}
+
+.contact_header {
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 42px;
+
+}
+
+.contact_description {
+	margin-top: 35px;
+	text-transform: capitalize;
+	line-height: 1.3;
+}
+
+.contact_form {
+	width: 450px;
+}
+
+/*start animate logo line*/
+
+.animate_line {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+}
+
+.marquee{text-align:left;width:100%;overflow:hidden;white-space: nowrap;}
+.marquee  { display:inline-block;width:100%;text-indent:0;animation: marquee 15s linear infinite}
+
+@keyframes marquee {
+ 0%   { transform: translate(100%, 0); }
+ 100% { transform: translate(-100%, 0); }
+}
+@media only screen and (max-width: 440px) {
+.marquee {animation:none;padding-left:0}
+}
+
+.marquee img{
+	margin-right:14%;
+}
+
+/*end animate logo line*/
+
+.footer {
+	margin-top: 94px;
+}
+
+.decorate_line {
+	width: 100%;
+	border-bottom: 1px solid #3F4C5F;
+}
+
+.connection {
+	margin-top: 95px;
+	margin-bottom: 104px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.tel {
+	width: 450px;
+	line-height: 35px;
+
+
+}
 
 
