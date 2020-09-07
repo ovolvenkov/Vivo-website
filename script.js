@@ -23,23 +23,41 @@ function animate() {
 	const about_info = document.querySelector('.about_info');
 	const aboutUs = document.querySelector('.about_us');
 	const arrowScrolTop = document.querySelector('.top_link');
+	const imgServices = document.querySelectorAll('.service')
 
 
 	document.addEventListener('scroll', (e)=>{
+		console.log(window.pageYOffset)
 		if (window.pageYOffset > 300) {
 			aboutPhoto.classList.add('active_about_photo');
 			about_info.style.transform = 'scale(1)'
-			//aboutUs.style.transform = 'translateY(0%)'
+			aboutUs.style.transform = 'translateY(0%)'
 			arrowScrolTop.style.transform = 'scale(0)'
-
-
-		}
-		else if (window.pageYOffset < 300) {
+		} else if (window.pageYOffset < 300) {
 			aboutPhoto.classList.remove('active_about_photo')
 			about_info.style.transform = 'scale(0)'
-						//aboutUs.style.transform = 'translateY(100%)'
+						aboutUs.style.transform = 'translateY(100%)'
 			arrowScrolTop.style.transform = 'scale(1)'
 		}
+
+		//animate section services
+		if (window.pageYOffset > 700) {
+			let num = 0.2;
+			imgServices.forEach(item => {
+				item.style.transform = "translateY(0%)";
+				item.style.transition = `all ${num}s`;
+				num += 0.3;
+			})
+		} else if (window.pageYOffset < 700) {
+						let num = 0.2;
+			imgServices.forEach(item => {
+				item.style.transform = "translateY(100%)";
+				item.style.transition = `all ${num}s`;
+				num += 0.3;
+				})
+		}
+
+
 	})
 }
 
@@ -154,11 +172,11 @@ function openCloseProduct() {
 	const models = document.querySelectorAll('.models');
 
 	document.addEventListener('click', function(e) {
-		models.forEach((item)=> item.style.height = '0px')
 
 		if (e.target.classList.contains('icon_text')) {
-			e.target.nextElementSibling.style.height = '100px';	
-		}
+			e.target.nextElementSibling.classList.toggle('models_active');
+
+		} 
 	})
 }
 

@@ -398,7 +398,8 @@ html.modal-active, body.modal-active {
 	font-style: normal;
 	font-weight: bold;
 	font-size: 16px;
-	line-height: 19px;
+	transform: translateY(100%);
+	transition: all 1s;
 
 }
 
@@ -529,16 +530,20 @@ html.modal-active, body.modal-active {
 .models {
 	margin-top: 21px;
 	height: 0px;
-	overflow: hidden;
-	transition: all 1.5s;
+	transform: scaleY(0);
+	transition: all 1s;
 }
 
-
+.models_active {
+	height: 100px;
+	transform: scaleY(1);
+	transition: all 1.3s;
+}
 
 
 .contact .container {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	margin-top: 164px;
 	margin-bottom: 159px;
@@ -573,8 +578,64 @@ html.modal-active, body.modal-active {
 }
 
 .contact_form {
-	width: 450px;
+	
 }
+
+input, textarea {
+	outline: none;
+	border: none;
+	margin-top: 12px;
+	font-family: Karla;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+textarea {
+	padding-top: 17px;
+}
+
+input::placeholder, textarea::placeholder {
+  	font-family: Karla;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	color: #C4C4C4;
+}
+
+
+.input {
+	width: 417px;
+	min-height: 53px;
+	background: #fff;
+}
+
+.textarea {
+	width: 417px;
+	height: 72px;
+	background: #fff;
+}
+
+.btn_submit {
+	width: 447px;
+	height: 53px;
+	background: #29AAF3;
+	font-family: Karla;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	line-height: 19px;
+	/* identical to box height */
+
+
+	color: #FFFFFF;
+}
+
+
 
 /*start animate logo line*/
 
@@ -585,20 +646,7 @@ html.modal-active, body.modal-active {
 	justify-content: space-between;
 }
 
-.marquee{text-align:left;width:100%;overflow:hidden;white-space: nowrap;}
-.marquee  { display:inline-block;width:100%;text-indent:0;animation: marquee 15s linear infinite}
 
-@keyframes marquee {
- 0%   { transform: translate(100%, 0); }
- 100% { transform: translate(-100%, 0); }
-}
-@media only screen and (max-width: 440px) {
-.marquee {animation:none;padding-left:0}
-}
-
-.marquee img{
-	margin-right:13%;
-}
 
 /*end animate logo line*/
 
@@ -632,8 +680,6 @@ html.modal-active, body.modal-active {
 
 .top_link {
 	position: fixed;
-	bottom: 20px;
-	left: 30px;
 	z-index: 400;
 	display: flex;
 	flex-direction: column;
@@ -652,7 +698,7 @@ html.modal-active, body.modal-active {
 
 }
 .top_link:hover {
-	box-shadow: 0 0 5px 1px #299EF3;
+	box-shadow: 0 0 1px 1px #299EF3;
 }
 
 .top_link span {
