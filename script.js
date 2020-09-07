@@ -18,27 +18,32 @@ reduceMenuSize()
 
 
 
-function animateAboutSection() {
+function animate() {
 	const aboutPhoto = document.querySelector('.about_photo');
 	const about_info = document.querySelector('.about_info');
 	const aboutUs = document.querySelector('.about_us');
+	const arrowScrolTop = document.querySelector('.top_link');
+
 
 	document.addEventListener('scroll', (e)=>{
 		if (window.pageYOffset > 300) {
 			aboutPhoto.classList.add('active_about_photo');
 			about_info.style.transform = 'scale(1)'
 			//aboutUs.style.transform = 'translateY(0%)'
+			arrowScrolTop.style.transform = 'scale(0)'
+
 
 		}
 		else if (window.pageYOffset < 300) {
 			aboutPhoto.classList.remove('active_about_photo')
 			about_info.style.transform = 'scale(0)'
 						//aboutUs.style.transform = 'translateY(100%)'
+			arrowScrolTop.style.transform = 'scale(1)'
 		}
 	})
 }
 
-animateAboutSection()
+animate()
 
 
 
@@ -54,10 +59,10 @@ function modalVideo() {
 		modalContainer.removeAttribute('class');
 		modalContainer.classList.add('one');
 		body.classList.add('modal-active');
-		modal.innerHTML = `<iframe width="1015" height="523" 
+		modal.innerHTML = `<div class="videoblock" ><iframe width="1015" height="523" 
 							src="https://www.youtube.com/embed/-yVqM6WnPs0" 
 							frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
-							picture-in-picture" allowfullscreen></iframe>`;
+							picture-in-picture" allowfullscreen></iframe></div>`;
 	}))
 
 	modalContainer.addEventListener('click',( e => {
@@ -71,32 +76,6 @@ function modalVideo() {
 modalVideo()
 
 
-
-
-
-function smoothScrolling() {
-	document.addEventListener('click', function(e) {
-		let anchors = document.querySelectorAll('a[href^="#"]');
-			for (let i = 0; i < anchors.length; i++) {
-				if(anchors[i] === e.target) {
-					e.preventDefault();
-					let selector = e.target.getAttribute('href');
-					let elem = document.querySelector(`${selector}`);
-					console.log(elem.offsetTop)
-					if (selector === '#about') {
-						window.scrollTo(0,elem.offsetTop - 180)
-					} else if(selector === '#our_services') {
-						window.scrollTo(0,elem.offsetTop - 70)
-					} else if(selector === '#contacts'){
-						window.scrollTo(0,elem.offsetTop - 240)
-					} else {
-						window.scrollTo(0,elem.offsetTop - 80)
-					}
-				}
-			}
-	})
-}
-
 //smoothScrolling()
 
 // smooth anchor scrolling
@@ -109,15 +88,35 @@ document.addEventListener('click', function(event){
 		let targetAnchor = event.target.getAttribute('href');
 		let targetElem = document.querySelector(targetAnchor);
 		let targetTop = targetElem.offsetTop;
-		window.scrollTo({
-			left: 0,
-			top: targetTop,
-			behavior: 'smooth'
-		});
+
+		if (targetAnchor === '#about') {
+			window.scrollTo({
+				left: 0,
+				top: targetTop - 180,
+				behavior: 'smooth'
+			})
+		} else if(targetAnchor === '#our_services') {
+			window.scrollTo({
+				left: 0,
+				top: targetTop - 70,
+				behavior: 'smooth'
+			})
+		} else if(targetAnchor === '#contacts'){
+			window.scrollTo({
+				left: 0,
+				top: targetTop - 240,
+				behavior: 'smooth'
+			})
+		} else {
+			window.scrollTo({
+				left: 0,
+				top: targetTop - 80,
+				behavior: 'smooth'
+			})
+		}
 	}
 // scroll totop
-	if(event.target.classList.contains('top_link') ||
-	 event.target.parentNode.classList.contains('top_link')){
+	if(event.target.classList.contains('logo') || event.target.parentNode.classList.contains('logo')){
 		window.scrollTo({
 			left: 0,
 			top: 0,
@@ -129,7 +128,41 @@ document.addEventListener('click', function(event){
 			window.location.hash = 'htop';
 		}
 	}
+
+// scroll to bottom
+	if (event.target.classList.contains('top_link') || event.target.parentNode.classList.contains('top_link')) {
+		let scrollHeight = Math.max(
+		  document.body.scrollHeight, document.documentElement.scrollHeight,
+		  document.body.offsetHeight, document.documentElement.offsetHeight,
+		  document.body.clientHeight, document.documentElement.clientHeight
+		);
+
+		window.scrollBy({
+			left: 0,
+			top: scrollHeight,
+			behavior: 'smooth'
+		});
+
+
+	}
+
+
 });
+
+
+function openCloseProduct() {
+	const models = document.querySelectorAll('.models');
+
+	document.addEventListener('click', function(e) {
+		models.forEach((item)=> item.style.height = '0px')
+
+		if (e.target.classList.contains('icon_text')) {
+			e.target.nextElementSibling.style.height = '100px';	
+		}
+	})
+}
+
+openCloseProduct()
 
 
 
