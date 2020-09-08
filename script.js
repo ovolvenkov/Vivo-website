@@ -23,7 +23,7 @@ function animate() {
 	const about_info = document.querySelector('.about_info');
 	const aboutUs = document.querySelector('.about_us');
 	const arrowScrolTop = document.querySelector('.top_link');
-	const imgServices = document.querySelectorAll('.service')
+	const imgServices = document.querySelectorAll('.service');
 
 
 	document.addEventListener('scroll', (e)=>{
@@ -36,19 +36,19 @@ function animate() {
 		} else if (window.pageYOffset < 300) {
 			aboutPhoto.classList.remove('active_about_photo')
 			about_info.style.transform = 'scale(0)'
-						aboutUs.style.transform = 'translateY(100%)'
+			aboutUs.style.transform = 'translateY(100%)'
 			arrowScrolTop.style.transform = 'scale(1)'
 		}
 
 		//animate section services
-		if (window.pageYOffset > 700) {
+		if (window.pageYOffset > 800) {
 			let num = 0.2;
 			imgServices.forEach(item => {
 				item.style.transform = "translateY(0%)";
 				item.style.transition = `all ${num}s`;
 				num += 0.3;
 			})
-		} else if (window.pageYOffset < 700) {
+		} else if (window.pageYOffset < 800) {
 						let num = 0.2;
 			imgServices.forEach(item => {
 				item.style.transform = "translateY(100%)";
@@ -57,6 +57,22 @@ function animate() {
 				})
 		}
 
+		//animate section products
+		let productsUl = document.querySelector('.products_ul');
+		if (window.pageYOffset > 1600) {
+			productsUl.style.transform = "translateY(0%)";
+		} else if (window.pageYOffset < 1600) {
+			productsUl.style.transform = "translateY(100%)";
+		}
+
+		//animate contact section
+		let contact = document.querySelector('.contact');
+
+		if (window.pageYOffset > 2100) {
+			contact.style.transform = 'translateY(0%)';
+		} else if (window.pageYOffset < 2100) {
+			contact.style.transform = 'translateY(100%)';
+		}
 
 	})
 }

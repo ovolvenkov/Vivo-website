@@ -70,8 +70,7 @@ a {
     transform:translateX(-50%);
 }
 
-.nav_a:hover:after,
-.nav_a:focus:after {
+.nav_a:hover:after {
     width: 80%;
 }
 
@@ -475,12 +474,14 @@ html.modal-active, body.modal-active {
 
 .products_ul{
 
-		width: 1122px;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		margin-top: 96px;
-		margin-bottom: 20px;
+	width: 1122px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 96px;
+	margin-bottom: 20px;
+	transform: translateY(100%);
+	transition: all 1s;
 }
 
 .product_li {
@@ -490,6 +491,7 @@ html.modal-active, body.modal-active {
 	margin-bottom: 75px;
 	display: flex;
 	align-items: flex-start;
+
 }
 
 
@@ -540,6 +542,10 @@ html.modal-active, body.modal-active {
 	transition: all 1.3s;
 }
 
+.contact {
+	transform: translateY(100%);
+	transition: all 0.8s;
+}
 
 .contact .container {
 	display: flex;
@@ -646,7 +652,21 @@ input::placeholder, textarea::placeholder {
 	justify-content: space-between;
 }
 
+.marquee{text-align:left;width:100%;overflow:hidden;white-space: nowrap;}
+.marquee  { display:inline-block;width:100%;text-indent:0;animation: marquee 15s linear infinite}
 
+@keyframes marquee {
+ 0%   { transform: translate(100%, 0); }
+ 100% { transform: translate(-100%, 0); }
+}
+@media only screen and (max-width: 440px) {
+.marquee {animation:none;padding-left:0}
+}
+
+.marquee img{
+	margin-right: 13.7%;
+	height: auto;
+}
 
 /*end animate logo line*/
 
