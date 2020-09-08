@@ -75,6 +75,13 @@ function animate() {
 		}
 
 	})
+
+	//animate opacity first screen .main_header_text
+	  document.addEventListener("DOMContentLoaded", () => {
+    	let mainHeaderText = document.querySelector('.main_header_text');
+    	mainHeaderText.style.opacity = '1';
+    	mainHeaderText.style.transform = 'scale(1)';
+ 	 });
 }
 
 animate()
@@ -184,10 +191,11 @@ function openCloseProduct() {
 
 	document.addEventListener('click', function(e) {
 
+		models.forEach(item => item.classList.remove('models_active'))
 		if (e.target.classList.contains('icon_text')) {
 			e.target.nextElementSibling.classList.toggle('models_active');
-
 		} 
+
 	})
 }
 

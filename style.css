@@ -92,7 +92,8 @@ a {
 	font-size: 64px;
 	line-height: 1.4;
 	padding-top: 310px;
-
+	opacity: 0;
+	transition: all 3s ease-in;
 }
 
 .main_text{
@@ -540,13 +541,13 @@ html.modal-active, body.modal-active {
 	margin-top: 21px;
 	height: 0px;
 	transform: scaleY(0);
-	transition: all 1s;
+	transition: all 1.2s;
 }
 
 .models_active {
 	height: 100px;
 	transform: scaleY(1);
-	transition: all 1.3s;
+	transition: all 1.2s;
 }
 
 .contact {
