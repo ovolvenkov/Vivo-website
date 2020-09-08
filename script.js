@@ -163,19 +163,14 @@ document.addEventListener('click', function(event){
 		}
 	}
 
-// scroll to bottom
+//btn scroll to bottom
 	if (event.target.classList.contains('top_link') || event.target.parentNode.classList.contains('top_link')) {
-		let scrollHeight = Math.max(
-		  document.body.scrollHeight, document.documentElement.scrollHeight,
-		  document.body.offsetHeight, document.documentElement.offsetHeight,
-		  document.body.clientHeight, document.documentElement.clientHeight
-		);
-
-		window.scrollBy({
+		let targetElem = document.querySelector('#about');
+		window.scrollTo({
 			left: 0,
-			top: scrollHeight,
+			top: targetElem.offsetTop - 180,
 			behavior: 'smooth'
-		});
+		})
 
 
 	}
