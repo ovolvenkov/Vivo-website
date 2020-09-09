@@ -650,11 +650,15 @@ input::placeholder, textarea::placeholder {
 	font-weight: normal;
 	font-size: 16px;
 	line-height: 19px;
-	/* identical to box height */
-
-
-	color: #FFFFFF;
+	color: #fff;
+	opacity: 1;
+	transition:  opacity 0.4s;
 }
+
+	.btn_submit:hover {
+		opacity: 0.7;
+	}
+
 
 
 
@@ -733,6 +737,7 @@ input::placeholder, textarea::placeholder {
 
 }
 .top_link:hover {
+	cursor: pointer;
 	box-shadow: 0 0 1px 1px #299EF3;
 }
 
@@ -961,17 +966,20 @@ input::placeholder, textarea::placeholder {
 	.nav {
 	    text-align: end;
     	flex-wrap: wrap;
-    	flex-direction: column;
+    	
     	
 	}
 
-	.nav:after {
+	.nav:before {
 		content: url(img/filter.svg);
+		display: none;
 	}
 
 	.nav_a {
-		position: absolute;
-		display: none;
+	position: relative;
+	margin-right: 15px;
+	margin-bottom: 5px;
+	
 
 	}
 
@@ -1010,6 +1018,16 @@ input::placeholder, textarea::placeholder {
     	padding: 22px 110px;
     	margin-top: 51px;
 
+	}
+
+	#modal-container .modal-background .modal {
+    	padding: 30px;
+	}
+
+	#modal-container .modal-background .modal:after {
+	    right: 5px;
+	    top: 3px;
+	    transform: scale(0.7);
 	}
 
 	.about_photo {
@@ -1181,7 +1199,9 @@ input::placeholder, textarea::placeholder {
 	.btn_submit {
     	width: 315px;
 
+
 	}
+
 
 	.marquee {
     	display: flex;

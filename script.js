@@ -84,7 +84,7 @@ function animate() {
  	 });
 }
 
-if(document.documentElement.clientWidth > 375) animate();
+if(document.documentElement.clientWidth >= 768) animate();
 
 
 
@@ -209,28 +209,6 @@ function openCloseProduct() {
 
 openCloseProduct()
 
-
-
-function changeHeaderBackgroung() {
-		let backgroundImg = document.querySelector('.background_img');
-		if (document.documentElement.clientWidth <= 768 && document.documentElement.clientWidth >= 376) {
-			backgroundImg.innerHTML = "<img src='img/header_bg_768.png' alt='background image'>";
-		} else if (document.documentElement.clientWidth < 376) {
-			backgroundImg.innerHTML = "<img src='img/header_bg_768.png' alt='background image'>";
-		} else {
-			backgroundImg.innerHTML = "<img src='img/header_bg_img.png' alt='background image'>";
-		}
-
-		window.addEventListener('resize', (e)=>{
-			if (document.documentElement.clientWidth <= 768 && document.documentElement.clientWidth >= 376) {
-				backgroundImg.innerHTML = "<img src='img/header_bg_768.png' alt='background image'>";
-			} else if (document.documentElement.clientWidth < 376) {
-				backgroundImg.innerHTML = "<img src='img/header_bg_768.png' alt='background image'>";
-			} else {
-				backgroundImg.innerHTML = "<img src='img/header_bg_img.png' alt='background image'>";
-			}
-		})
-}
 
 
 /*function menu() {
