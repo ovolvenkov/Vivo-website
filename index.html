@@ -297,9 +297,16 @@
 				</div>
 				<div class="contact_form">
 					<form action="send.php" method="post">
-						<input class="input" type="text" name="name" required placeholder="Your name"><br>
-						<input class="input" type="tel" name="number" required placeholder="Phone number"><br>
-						<textarea class="textarea" name="comment" placeholder="Your comment"></textarea><br>
+
+						<!-- Hidden Required Fields -->
+						<input type="hidden" name="project_name" value="Vivo Distributors">
+						<input type="hidden" name="admin_email" value="ovolvenkov@gmail.com">
+						<input type="hidden" name="form_subject" value="Contact form">
+						<!-- END Hidden Required Fields -->
+
+						<input class="input" type="text" name="Name" required placeholder="Your name"><br>
+						<input class="input" type="tel" name="Number" required placeholder="Phone number"><br>
+						<textarea class="textarea" name="Message" placeholder="Your comment"></textarea><br>
 						<input class="btn_submit" type="submit" name="submit" value="Send">
 					</form>
 				</div>
@@ -343,7 +350,7 @@
 			</div>
 			<a class="top_link"><span>Scroll</span><img src="img/arrow.svg" alt="arrow"></a>
 		</footer>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="script.js"></script>
 	</body>
 </html>
