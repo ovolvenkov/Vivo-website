@@ -232,7 +232,6 @@ function changeHeaderBackgroung() {
 		})
 }
 
-changeHeaderBackgroung()
 
 /*function menu() {
 	let menuContainer = document.querySelector('.menu .container');

@@ -75,7 +75,13 @@ a {
 }
 
 .main_info {
-		margin-bottom: 350px;
+    margin-bottom: 184px;
+    background: url(img/header_bg_img.png);
+    background-repeat: no-repeat;
+    background-position: right 0px bottom 0px;
+    min-height: 630px;
+    position: relative;
+    padding-bottom: 100px;
 }
 
 .main_wrapper {
@@ -127,12 +133,12 @@ a {
 	cursor: pointer;
 }
 
-.background_img {
+/*.background_img {
 	position: absolute;
 	right: 0px;
 	top: 98px;
 	z-index: 1;
-}
+}*/
 
 
 /*start video modal window styles*/
@@ -784,6 +790,16 @@ input::placeholder, textarea::placeholder {
     	width: 536px;
 	}
 
+	.main_info {
+	    margin-bottom: 184px;
+	    background: url(img/header_bg_768.png);
+	    background-repeat: no-repeat;
+	    background-position: right 0px bottom 0px;
+	    min-height: 630px;
+	    position: relative;
+	    padding-bottom: 100px;
+	}
+
 	.top_link {
 		display: none;
 	}
@@ -793,7 +809,7 @@ input::placeholder, textarea::placeholder {
 	}
 
 	.main_info {
-    	margin-bottom: 236px;
+    	margin-bottom: 73px;
 	}
 
 	.about_wrapper {
@@ -924,11 +940,6 @@ input::placeholder, textarea::placeholder {
 }
 
 @media (max-width: 375px) {
-	html, body{
-    	width: 100%;
-    	max-width: 100%;
-    	overflow-x: hidden;
-  	}
 
 
 	.container {
@@ -938,7 +949,7 @@ input::placeholder, textarea::placeholder {
 	}
 
 	.header {
-		position: relative;
+		position: absolute;
 		background-color: transparent;
 	}   
 
@@ -964,24 +975,26 @@ input::placeholder, textarea::placeholder {
 
 	}
 
-	.background_img {
-    	right: -189px;
-    	top: 0px;
+	.main_info {
+	    margin-bottom: 85px;
+	    background: url(img/header_bg_768.png);
+	    background-repeat: no-repeat;
+	    background-position: right -198px bottom 0px;
+	    min-height: 630px;
+	    position: relative;
+	    padding-bottom: 0px;
 	}
 
 	.top_link {
 		display: none;
 	}
 
-	.main_info {
-		margin-bottom: 259px;
-	}
 
 	.main_header_text {
     	text-align: left;
     	font-size: 40px;
 		line-height: 47px;
-    	padding-top: 77px;
+    	padding-top: 175px;
     	opacity: 1;
     	transition: none;
 	}
