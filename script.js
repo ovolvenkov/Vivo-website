@@ -128,25 +128,25 @@ function smoothScrolling() {
 			let targetTop = targetElem.offsetTop;
 
 			if (targetAnchor === '#about') {
-				window.scrollTo({
+				window.scroll({
 					left: 0,
 					top: targetTop - 120,
 					behavior: 'smooth'
 				})
 			} else if(targetAnchor === '#our_services') {
-				window.scrollTo({
+				window.scroll({
 					left: 0,
 					top: targetTop - 70,
 					behavior: 'smooth'
 				})
 			} else if(targetAnchor === '#contacts'){
-				window.scrollTo({
+				window.scroll({
 					left: 0,
 					top: targetTop - 240,
 					behavior: 'smooth'
 				})
 			} else {
-				window.scrollTo({
+				window.scroll({
 					left: 0,
 					top: targetTop - 80,
 					behavior: 'smooth'
