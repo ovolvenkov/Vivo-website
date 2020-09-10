@@ -186,8 +186,6 @@ function smoothScrolling() {
 smoothScrolling()
 
 
-
-
 function openCloseProduct() {
 	const models = document.querySelectorAll('.models');
 

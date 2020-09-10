@@ -954,7 +954,7 @@ input::placeholder, textarea::placeholder {
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
-  }
+  	}
 
 
 
@@ -975,21 +975,16 @@ input::placeholder, textarea::placeholder {
 		transition: none;
 	}
 	.nav {
-	    text-align: end;
-    	flex-wrap: wrap;
-    	
-    	
+    	width: auto;
 	}
 
-	.nav:before {
+	.nav:after {
 		content: url(img/filter.svg);
-		display: none;
+
 	}
 
 	.nav_a {
-	position: relative;
-	margin-right: 15px;
-	margin-bottom: 5px;
+		display: none;
 	
 
 	}
