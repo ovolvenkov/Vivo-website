@@ -192,12 +192,10 @@ html.modal-active, body.modal-active {
 
 #modal-container .modal-background .modal {
   background: #000;
-  padding: 50px;
   border-radius: 3px;
   font-weight: 300;
   position: relative;
-
-
+  padding: 50px;
   max-width: 1015px;
   margin: 0 auto;
 
@@ -809,12 +807,18 @@ input::placeholder, textarea::placeholder {
 		display: none;
 	}
 
-	.modal-background .modal {
+	#modal-container .modal-background .modal {
     padding: 30px;
 	}
 
 	.main_info {
     	margin-bottom: 73px;
+	}
+
+	#modal-container .modal-background .modal:after {
+	    right: 5px;
+	    top: 5px;
+	    transform: scale(0.8);
 	}
 
 	.about_wrapper {
@@ -905,6 +909,7 @@ input::placeholder, textarea::placeholder {
 	input, textarea {
     	padding-left: 14px;
     	padding-right: 2px;
+    	border-radius: 0%;
 	}
 
 	.input {
@@ -945,6 +950,12 @@ input::placeholder, textarea::placeholder {
 }
 
 @media (max-width: 375px) {
+	html, body{
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
 
 
 	.container {
@@ -1181,23 +1192,24 @@ input::placeholder, textarea::placeholder {
 	}
 
 	.input {
-	    width: 290px;
+	    max-width: 290px;
 	}
 
 	input, textarea {
     	padding-left: 15px;
     	margin-top: 21px;
+    	border-radius: 0%;
 
 	}
 
 	.textarea {
-	    width: 290px;
+	     max-width: 290px;
 	    height: 37px;
 
 	}
 
 	.btn_submit {
-    	width: 315px;
+    	 max-width: 315px;
 
 
 	}

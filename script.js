@@ -83,7 +83,7 @@ function animate() {
  	 });
 }
 
-if(document.documentElement.clientWidth >= 768) animate();
+if(document.documentElement.clientWidth > 375) animate();
 
 
 
@@ -184,6 +184,9 @@ function smoothScrolling() {
 }
 
 smoothScrolling()
+
+
+
 
 function openCloseProduct() {
 	const models = document.querySelectorAll('.models');
