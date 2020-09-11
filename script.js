@@ -82,8 +82,8 @@ function animate() {
     	mainHeaderText.style.transform = 'scale(1)';
  	 });
 }
-
-if(document.documentElement.clientWidth > 375) animate();
+if(document.documentElement.clientWidth > 375) animate()
+document.addEventListener('resize',()=>{if(document.documentElement.clientWidth > 375) animate()});
 
 
 
@@ -135,7 +135,7 @@ function burgerMenu () {
 	}))
 
 	document.addEventListener('click', (e) => {
-			if(e.target.classList.contains('nav_a_active') || e.target.classList.contains('logo_img')) {
+			if(e.target.classList.contains('nav_a_active')) {
 				headerTop.classList.toggle('header_top_active');
 				navA.forEach(item => {item.classList.toggle('nav_a_active')});
 				nav.classList.toggle('nav_active');
@@ -144,7 +144,6 @@ function burgerMenu () {
 				mobileBurgerIcon.classList.toggle('mobile_burger_icon_active');
 			}
 		})
-
 
 }
 
