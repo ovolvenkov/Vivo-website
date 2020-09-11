@@ -1,12 +1,14 @@
 'use strict'
 
+
+
 function reduceMenuSize() {
 	const headerTop = document.querySelector('.header_top');
 	document.addEventListener('scroll', (e) => {
 		if (window.pageYOffset > 0) {
 			headerTop.style.paddingTop = '10px';
 			headerTop.style.transition = 'padding-top 0.3s ease-in-out';
-		} else if (window.pageYOffset == 0) {
+		} else if (window.pageYOffset === 0) {
 			headerTop.style.paddingTop = '21px'
 			headerTop.style.transition = 'padding-top 0.3s ease-in-out';
 		}
@@ -14,6 +16,7 @@ function reduceMenuSize() {
 }
 
 if(document.documentElement.clientWidth > 375) reduceMenuSize()
+
 
 
 
@@ -26,7 +29,7 @@ function animate() {
 
 
 	document.addEventListener('scroll', (e)=>{
-		//console.log(window.pageYOffset)
+		//animate section about
 		if (window.pageYOffset > 300) {
 			aboutPhoto.classList.add('active_about_photo');
 			about_info.style.transform = 'scale(1)'
@@ -76,15 +79,21 @@ function animate() {
 	})
 
 	//animate opacity first screen .main_header_text
-	  document.addEventListener("DOMContentLoaded", () => {
+	document.addEventListener("DOMContentLoaded", () => {
+    	let mainHeaderText = document.querySelector('.main_header_text');
+    	mainHeaderText.style.opacity = '1';
+    	mainHeaderText.style.transform = 'scale(1)';
+ 	 });
+
+	window.addEventListener("resize", () => {
     	let mainHeaderText = document.querySelector('.main_header_text');
     	mainHeaderText.style.opacity = '1';
     	mainHeaderText.style.transform = 'scale(1)';
  	 });
 }
-if(document.documentElement.clientWidth > 375) animate()
-document.addEventListener('resize',()=>{if(document.documentElement.clientWidth > 375) animate()});
 
+if(document.documentElement.clientWidth > 375) animate();
+window.addEventListener('resize',()=>{if(document.documentElement.clientWidth > 375) animate()});
 
 
 
@@ -115,6 +124,9 @@ function modalVideo() {
 
 modalVideo()
 
+
+
+
 //function burger menu 
 function burgerMenu () {
 	let headerTop = document.querySelector('.header_top');
@@ -135,16 +147,15 @@ function burgerMenu () {
 	}))
 
 	document.addEventListener('click', (e) => {
-			if(e.target.classList.contains('nav_a_active')) {
-				headerTop.classList.toggle('header_top_active');
-				navA.forEach(item => {item.classList.toggle('nav_a_active')});
-				nav.classList.toggle('nav_active');
-				body.classList.toggle('modal-active');
-				html.classList.toggle('modal-active');
-				mobileBurgerIcon.classList.toggle('mobile_burger_icon_active');
-			}
-		})
-
+		if(e.target.classList.contains('nav_a_active')) {
+			headerTop.classList.toggle('header_top_active');
+			navA.forEach(item => {item.classList.toggle('nav_a_active')});
+			nav.classList.toggle('nav_active');
+			body.classList.toggle('modal-active');
+			html.classList.toggle('modal-active');
+			mobileBurgerIcon.classList.toggle('mobile_burger_icon_active');
+		}
+	})
 }
 
 burgerMenu ()
@@ -152,7 +163,6 @@ burgerMenu ()
 
 
 // smooth anchor scrolling
-
 function smoothScrolling() {
 
 	document.addEventListener('click', function(event){
@@ -188,7 +198,8 @@ function smoothScrolling() {
 				})
 			}
 		}
-	// scroll totop
+
+		// scroll totop
 		if(event.target.classList.contains('logo') || event.target.parentNode.classList.contains('logo')){
 			window.scrollTo({
 				left: 0,
@@ -202,7 +213,7 @@ function smoothScrolling() {
 			}
 		}
 
-	//btn scroll to about
+		//btn scroll to about
 		if (event.target.classList.contains('top_link') || event.target.parentNode.classList.contains('top_link')) {
 			let targetElem = document.querySelector('#about');
 			window.scrollTo({
@@ -269,9 +280,20 @@ $(document).ready(function() {
 });
 
 
-
-
-
+if(document.documentElement.clientWidth > 375) {
+	$('.marquee').marquee({
+    //speed in milliseconds of the marquee
+    duration: 9000,
+    //gap in pixels between the tickers
+    gap: 0,
+    //time in milliseconds before the marquee will start animating
+    delayBeforeStart: 0,
+    //'left' or 'right'
+    direction: 'left',
+    //true or false - should the marquee be duplicated to show an effect of continues flow
+    duplicated: true
+});
+}
 
 
 

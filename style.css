@@ -659,12 +659,19 @@ input::placeholder, textarea::placeholder {
 		opacity: 0.7;
 	}
 
+	.marquee {
+		width: 100%;
+  		overflow: hidden;
 
+	}
 
+	.marquee img {
+		margin-right: 103px; 
+	}
 
 /*start animate logo line*/
 
-.animate_line {
+/*.animate_line {
 	width: 100%;
 	overflow: hidden;
 	display: flex;
@@ -685,7 +692,7 @@ input::placeholder, textarea::placeholder {
 .marquee img{
 	margin-right: 13.7%;
 	height: auto;
-}
+}*/
 
 /*end animate logo line*/
 
