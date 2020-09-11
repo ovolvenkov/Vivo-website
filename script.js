@@ -165,7 +165,7 @@ function smoothScrolling() {
 			if (targetAnchor === '#about') {
 				window.scroll({
 					left: 0,
-					top: targetTop - 120,
+					top: targetTop - 110,
 					behavior: 'smooth'
 				})
 			} else if(targetAnchor === '#our_services') {
@@ -177,7 +177,7 @@ function smoothScrolling() {
 			} else if(targetAnchor === '#contacts'){
 				window.scroll({
 					left: 0,
-					top: targetTop - 240,
+					top: targetTop - 120,
 					behavior: 'smooth'
 				})
 			} else {
@@ -207,7 +207,7 @@ function smoothScrolling() {
 			let targetElem = document.querySelector('#about');
 			window.scrollTo({
 				left: 0,
-				top: targetElem.offsetTop - 180,
+				top: targetElem.offsetTop - 120,
 				behavior: 'smooth'
 			})
 
