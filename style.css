@@ -141,6 +141,7 @@ a {
 }*/
 
 
+
 /*start video modal window styles*/
 
 html.modal-active, body.modal-active {
@@ -972,22 +973,77 @@ input::placeholder, textarea::placeholder {
 
 	.header_top {
 		padding-top: 30px;
-		transition: none;
+
+		transition: background transform 1s;
 	}
 	.nav {
     	width: auto;
 	}
 
-	.nav:after {
-		content: url(img/filter.svg);
 
-	}
 
 	.nav_a {
 		display: none;
 	
-
 	}
+
+
+		/*burger menu start*/
+
+
+	.mobile_burger_icon {
+		content: url(img/filter.svg);
+		position: absolute;
+		right: 30px;
+		top: 40px;
+	}
+
+	.mobile_burger_icon_active {
+		content: url(img/cross.svg);
+		position: absolute;
+		right: 30px;
+		top: 40px;
+	}
+
+
+	.header_top_active {
+	  	position: fixed;
+	  	height: 100%;
+	  	width: 100%;
+	  	top: 0;
+	  	left: 0;
+	  	right: 0;
+	  	bottom: 0;
+	  	transform: scale(1);
+	  	z-index: 500;
+	  	background: #202731;
+	  	display: flex;
+	    flex-direction: column;
+	    justify-content: flex-start;
+	    align-items: center;	
+	    padding-top: 88px;
+	    transition: all 1s;
+	}
+
+	.nav_active {
+	    display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	    align-items: center;
+	}
+
+
+	.nav_a_active {
+		margin-top: 69px;
+		font-size: 24px;
+		line-height: 28px;
+		text-align: center;
+		display:block;
+	}
+
+
+
+	/*burger menu end*/
 
 	.main_info {
 	    margin-bottom: 85px;

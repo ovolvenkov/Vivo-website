@@ -115,6 +115,42 @@ function modalVideo() {
 
 modalVideo()
 
+//function burger menu 
+function burgerMenu () {
+	let headerTop = document.querySelector('.header_top');
+	let nav = document.querySelector('.nav');
+	let navA = document.querySelectorAll('.nav_a');
+	let mobileBurgerIcon = document.querySelector('.mobile_burger_icon');
+	let body = document.querySelector('body');
+	let html = document.querySelector('html');
+
+	mobileBurgerIcon.addEventListener('click', ( e => {
+		headerTop.classList.toggle('header_top_active');
+		navA.forEach(item => {item.classList.toggle('nav_a_active')});
+		nav.classList.toggle('nav_active');
+		body.classList.toggle('modal-active');
+		html.classList.toggle('modal-active');
+		mobileBurgerIcon.classList.toggle('mobile_burger_icon_active');
+
+	}))
+
+	document.addEventListener('click', (e) => {
+			if(e.target.classList.contains('nav_a_active') || e.target.classList.contains('logo_img')) {
+				headerTop.classList.toggle('header_top_active');
+				navA.forEach(item => {item.classList.toggle('nav_a_active')});
+				nav.classList.toggle('nav_active');
+				body.classList.toggle('modal-active');
+				html.classList.toggle('modal-active');
+				mobileBurgerIcon.classList.toggle('mobile_burger_icon_active');
+			}
+		})
+
+
+}
+
+burgerMenu ()
+
+
 
 // smooth anchor scrolling
 
@@ -167,7 +203,7 @@ function smoothScrolling() {
 			}
 		}
 
-	//btn scroll to bottom
+	//btn scroll to about
 		if (event.target.classList.contains('top_link') || event.target.parentNode.classList.contains('top_link')) {
 			let targetElem = document.querySelector('#about');
 			window.scrollTo({
@@ -234,35 +270,6 @@ $(document).ready(function() {
 });
 
 
-
-/*function menu() {
-	let menuContainer = document.querySelector('.menu .container');
-	let menuUl = document.querySelector('.menu_ul');
-	let arrow = document.querySelector('.menu_arrow');
-
-	menuContainer.addEventListener('click', menuOpenClose);
-
-	function menuOpenClose(e) {
-
-		let menuLiColection = document.querySelectorAll('.menu_li');
-		if (window.getComputedStyle(arrow).display === 'block') {
-			this.children[0].children[0].classList.toggle('menu_open');
-			arrow.classList.toggle('menu_arrow_top');
-
-			if (e.target.tagName === 'A') {
-				menuLiColection.forEach( item => item.children[0].classList.remove('menu_active'));
-				e.target.classList.add('menu_active');
-				menuUl.prepend(e.target.parentElement);
-			}
-		} else {
-			menuLiColection.forEach( item => item.children[0].classList.remove('menu_active'));
-			e.target.classList.add('menu_active');
-		}
-
-	} 
-}*/
-
-//menu()
 
 
 
