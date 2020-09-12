@@ -1,7 +1,5 @@
 'use strict'
 
-
-
 function reduceMenuSize() {
 	const headerTop = document.querySelector('.header_top');
 	document.addEventListener('scroll', (e) => {
@@ -61,7 +59,7 @@ function animate() {
 
 		//animate section products
 		let productsUl = document.querySelector('.products_ul');
-		if (window.pageYOffset > 1600) {
+		if (window.pageYOffset > 1500) {
 			productsUl.style.transform = "translateY(0%)";
 		} else if (window.pageYOffset < 1600) {
 			productsUl.style.transform = "translateY(100%)";
@@ -70,9 +68,9 @@ function animate() {
 		//animate contact section
 		let contact = document.querySelector('.contact');
 
-		if (window.pageYOffset > 2100) {
+		if (window.pageYOffset > 2050) {
 			contact.style.transform = 'translateY(0%)';
-		} else if (window.pageYOffset < 2100) {
+		} else if (window.pageYOffset < 2050) {
 			contact.style.transform = 'translateY(100%)';
 		}
 
@@ -229,7 +227,7 @@ function smoothScrolling() {
 	});
 }
 
-smoothScrolling()
+//smoothScrolling()
 
 
 function openCloseProduct() {
@@ -279,7 +277,7 @@ $(document).ready(function() {
 
 });
 
-
+//animation line logo
 if(document.documentElement.clientWidth > 375) {
 	$('.marquee').marquee({
     //speed in milliseconds of the marquee
@@ -298,6 +296,27 @@ if(document.documentElement.clientWidth > 375) {
 
 
 
+$(document).ready(function(){
+	$(".header_top").on("click","a", function (event) {
+		event.preventDefault(); //опустошим стандартную обработку
+		var id  = $(this).attr('href'); //заберем айдишник блока с параметром URL
+		var	top = $(id).offset().top;
+			if (id === '#about') {
+				top = 650;
+			} else if(id === '#our_services') {
+				top = $(id).offset().top - 80;
+			} else if(id === '#products_section') {
+				top = $(id).offset().top - 80;
+			} else if(id === '#contacts'){
+				top = 2830;
+			} else if (id === '#home') {
+				top = 0;
+			}
 
+			console.log(id, top)
+
+	$('body,html').animate({scrollTop: top}, 500); //сделаем прокрутку за 1 с
+	});
+});
 
 
