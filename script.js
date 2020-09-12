@@ -1,5 +1,5 @@
 'use strict'
-
+//reduce size header menu
 function reduceMenuSize() {
 	const headerTop = document.querySelector('.header_top');
 	document.addEventListener('scroll', (e) => {
@@ -17,14 +17,12 @@ if(document.documentElement.clientWidth > 375) reduceMenuSize()
 
 
 
-
-function animate() {
+function animateSections() {
 	const aboutPhoto = document.querySelector('.about_photo');
 	const about_info = document.querySelector('.about_info');
 	const aboutUs = document.querySelector('.about_us');
 	const arrowScrolTop = document.querySelector('.top_link');
 	const imgServices = document.querySelectorAll('.service');
-
 
 	document.addEventListener('scroll', (e)=>{
 		//animate section about
@@ -90,8 +88,8 @@ function animate() {
  	 });
 }
 
-if(document.documentElement.clientWidth > 375) animate();
-window.addEventListener('resize',()=>{if(document.documentElement.clientWidth > 375) animate()});
+if(document.documentElement.clientWidth > 375) animateSections();
+window.addEventListener('resize',()=>{if(document.documentElement.clientWidth > 375) animateSections()});
 
 
 
@@ -125,7 +123,7 @@ modalVideo()
 
 
 
-//function burger menu 
+//burger menu 
 function burgerMenu () {
 	let headerTop = document.querySelector('.header_top');
 	let nav = document.querySelector('.nav');
@@ -159,77 +157,7 @@ function burgerMenu () {
 burgerMenu ()
 
 
-
-// smooth anchor scrolling
-function smoothScrolling() {
-
-	document.addEventListener('click', function(event){
-		if(event.target.classList.contains('smooth')){
-			event.preventDefault();
-			let targetAnchor = event.target.getAttribute('href');
-			let targetElem = document.querySelector(targetAnchor);
-			let targetTop = targetElem.offsetTop;
-
-			if (targetAnchor === '#about') {
-				window.scroll({
-					left: 0,
-					top: targetTop - 110,
-					behavior: 'smooth'
-				})
-			} else if(targetAnchor === '#our_services') {
-				window.scroll({
-					left: 0,
-					top: targetTop - 70,
-					behavior: 'smooth'
-				})
-			} else if(targetAnchor === '#contacts'){
-				window.scroll({
-					left: 0,
-					top: targetTop - 120,
-					behavior: 'smooth'
-				})
-			} else {
-				window.scroll({
-					left: 0,
-					top: targetTop - 80,
-					behavior: 'smooth'
-				})
-			}
-		}
-
-		// scroll totop
-		if(event.target.classList.contains('logo') || event.target.parentNode.classList.contains('logo')){
-			window.scrollTo({
-				left: 0,
-				top: 0,
-				behavior: 'smooth'
-			});
-			// tip for IOS Safari
-			if(window.innerWidth <= 1024 || screen.width <= 1024 ){
-				document.body.scrollTop = 0; // For Safari
-				window.location.hash = 'htop';
-			}
-		}
-
-		//btn scroll to about
-		if (event.target.classList.contains('top_link') || event.target.parentNode.classList.contains('top_link')) {
-			let targetElem = document.querySelector('#about');
-			window.scrollTo({
-				left: 0,
-				top: targetElem.offsetTop - 120,
-				behavior: 'smooth'
-			})
-
-
-		}
-
-
-	});
-}
-
-//smoothScrolling()
-
-
+//open-close category product
 function openCloseProduct() {
 	const models = document.querySelectorAll('.models');
 
@@ -255,7 +183,7 @@ openCloseProduct()
 
 
 
-	//E-mail
+	//send E-mail
 $(document).ready(function() {
 
 	//E-mail Ajax Send
@@ -277,6 +205,8 @@ $(document).ready(function() {
 
 });
 
+
+
 //animation line logo
 if(document.documentElement.clientWidth > 375) {
 	$('.marquee').marquee({
@@ -295,11 +225,12 @@ if(document.documentElement.clientWidth > 375) {
 
 
 
-
+//smooth scrolling by anchors for ios and other
 $(document).ready(function(){
 	$(".header_top").on("click","a", function (event) {
-		event.preventDefault(); //опустошим стандартную обработку
-		var id  = $(this).attr('href'); //заберем айдишник блока с параметром URL
+		event.preventDefault(); 
+
+		var id  = $(this).attr('href'); 
 		var	top = $(id).offset().top;
 			if (id === '#about') {
 				top = 650;
@@ -312,8 +243,6 @@ $(document).ready(function(){
 			} else if (id === '#home') {
 				top = 0;
 			}
-
-			console.log(id, top)
 
 	$('body,html').animate({scrollTop: top}, 500); //сделаем прокрутку за 1 с
 	});
