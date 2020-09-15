@@ -90,6 +90,7 @@ function animateSections() {
 
 if(document.documentElement.clientWidth > 375) animateSections();
 window.addEventListener('resize',()=>{if(document.documentElement.clientWidth > 375) animateSections()});
+window.addEventListener( 'orientationchange', () => { animateSections() } );
 
 
 
