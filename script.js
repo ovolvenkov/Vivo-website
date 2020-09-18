@@ -196,21 +196,19 @@ function openCloseProduct() {
 	const models = document.querySelectorAll('.models');
 
 	document.addEventListener('click', function(e) {
-		models.forEach(item => item.classList.remove('models_active'))
+		models.forEach(item => item.classList.remove('models_active'));
 		if (e.target.classList.contains('icon_text')) {
 			e.target.nextElementSibling.classList.toggle('models_active');
 		} 
-
+			
+		
 	})
-
 
 
 	//for mobile browsers event
 
 	document.addEventListener('touchstart', function(e) {
-
 		models.forEach(item => item.classList.remove('models_active'))
-
 		if (e.target.classList.contains('icon_text')) {
 			e.target.nextElementSibling.classList.toggle('models_active');
 		} 
@@ -218,7 +216,6 @@ function openCloseProduct() {
 	})
 
 }
-
 
 openCloseProduct()
 
@@ -268,7 +265,7 @@ if(document.documentElement.clientWidth > 375) {
 	$('.marquee').marquee({
     //speed in milliseconds of the marquee
 
-    duration: 8000,
+    duration: 10000,
     //gap in pixels between the tickers
 
     gap: 0,
@@ -285,10 +282,6 @@ if(document.documentElement.clientWidth > 375) {
 });
 
 }
-
-
-
-
 
 
 

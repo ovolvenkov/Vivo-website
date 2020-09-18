@@ -681,11 +681,15 @@ input::placeholder, textarea::placeholder {
 		width: 100%;
   		overflow: hidden;
 
+
 	}
 
 	.marquee img {
 		margin-right: 103px;
+
 	}
+
+
 
 /*start animate logo line*/
 
@@ -770,7 +774,11 @@ input::placeholder, textarea::placeholder {
 	margin-bottom: 10px;
 }
 
+.grecaptcha-badge {
+	z-index: 40;
+	transform: scale(0.75);
 
+}
 
 
 
