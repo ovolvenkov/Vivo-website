@@ -140,6 +140,16 @@
 								<li class="model">XIAOMI</li>
 								<li class="model">SAMSUNG</li>
 								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
+								<li class="model">APPLE</li>
 							</ul>
 						</div>
 					</li>
@@ -312,11 +322,17 @@
 						<input type="hidden" name="form_subject" value="Contact form">
 						<!-- END Hidden Required Fields -->
 
-						<input class="input" type="text" name="Name" required placeholder="Your name"><br>
-						<input class="input" type="tel" name="Number" required placeholder="Phone number"><br>
+						<input class="input input_name" type="text" name="Name" required placeholder="Your name"><br>
+						<input class="input input_phone" type="tel" name="Number" required placeholder="Phone number"><br>
 						<textarea class="textarea" name="Message" placeholder="Your comment"></textarea><br>
 						<input class="btn_submit" type="submit" name="submit" value="Send">
+						<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
 					</form>
+					<div class="check">
+						<img class="check_img" src="img/check.svg">
+						<div class="check_text">Thank you, </br>
+						the data has been successfully sent</div>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -361,5 +377,16 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.js" type="text/javascript"></script>
 		<script src="script.js"></script>
+
+		<script src="https://www.google.com/recaptcha/api.js?render=6Ld0eMwZAAAAAAwcfvF2CT3mMm7RROj97fab_9ki"></script>
+		<script>
+			grecaptcha.ready( function () {
+				grecaptcha.execute('6Ld0eMwZAAAAAAwcfvF2CT3mMm7RROj97fab_9ki', { action: 'contact'}).then(function (token) {
+					var recaptchaResponse = document.getElementById('recaptchaResponse');
+					recaptchaResponse.value = token;
+					console.log(token)
+				});
+			});
+		</script>
 	</body>
 </html>

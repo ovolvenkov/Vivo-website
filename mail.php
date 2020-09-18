@@ -2,6 +2,28 @@
 
 $method = $_SERVER['REQUEST_METHOD'];
 
+//recaptcha
+if (isset($_POST['recaptcha_response']) && !empty($_POST['recaptcha_response'])) {
+
+	//Build POST request
+	$recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
+	$recaptcha_secret = '6Ld0eMwZAAAAAAfJEENTvBV0nYUPNb0gGVk9CdOg';
+	$recaptcha_response = $_POST['recaptcha_response'];
+
+	//Make and decode POST request
+	$recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
+	$recaptcha = json_decode($recaptcha);
+
+	//Take action based on the score returned
+	if ($recaptcha->score >= 0.5) {
+
+	}else {
+		//code
+	}
+
+}
+
+
 //Script Foreach
 $c = true;
 if ( $method === 'POST' ) {
@@ -11,7 +33,7 @@ if ( $method === 'POST' ) {
 	$form_subject = trim($_POST["form_subject"]);
 
 	foreach ( $_POST as $key => $value ) {
-		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
+		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" && $key != "recaptcha_response") {
 			$message .= "
 			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
 				<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
@@ -27,7 +49,7 @@ if ( $method === 'POST' ) {
 	$form_subject = trim($_GET["form_subject"]);
 
 	foreach ( $_GET as $key => $value ) {
-		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
+		if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" && $key != "recaptcha_response") {
 			$message .= "
 			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
 				<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
