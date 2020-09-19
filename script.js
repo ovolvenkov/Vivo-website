@@ -208,7 +208,7 @@ document.addEventListener('click', function(e) {
   		selectedElement.classList.add('models_active'); // подсветить новый td
 
   	}
-  	return false;
+  	 e.stopPropagation();
 
 })
 
@@ -226,7 +226,7 @@ document.addEventListener('touchstart', function(e) {
   		selectedElement.classList.add('models_active'); // подсветить новый td
 
   	}
-  	return false;
+  	e.stopPropagation();
 
 })
 
