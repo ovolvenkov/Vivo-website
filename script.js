@@ -209,10 +209,24 @@ document.addEventListener('click', function(e) {
 
   	}
 
-
 })
 
+document.addEventListener('touchstart', function(e) { 
+	let target = e.target.nextElementSibling;
+	if (!e.target.classList.contains('icon_text')) return;
+	if (selectedElement) { // убрать существующую подсветку, если есть
+    	selectedElement.classList.remove('models_active');
+  	}
+  	if (target === selectedElement ) {
+  		selectedElement.classList.remove('models_active');
+  		selectedElement = null;
+  	} else {
+  		selectedElement = target;
+  		selectedElement.classList.add('models_active'); // подсветить новый td
 
+  	}
+
+})
 
 
 
