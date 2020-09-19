@@ -192,8 +192,31 @@ burgerMenu ()
 //open-close category product
 
 function openCloseProduct() {
+let selectedElement;
 
-	const models = document.querySelectorAll('.models');
+document.addEventListener('click', function(e) { 
+	let target = e.target.nextElementSibling;
+	if (!e.target.classList.contains('icon_text')) return;
+	if (selectedElement) { // убрать существующую подсветку, если есть
+    	selectedElement.classList.remove('models_active');
+  	}
+  	if (target === selectedElement ) {
+  		selectedElement.classList.remove('models_active');
+  		selectedElement = null;
+  	} else {
+  		selectedElement = target;
+  		selectedElement.classList.add('models_active'); // подсветить новый td
+
+  	}
+
+
+})
+
+
+
+
+
+/*	const models = document.querySelectorAll('.models');
 
 	document.addEventListener('click', function(e) {
 		models.forEach(item => item.classList.remove('models_active'));
@@ -213,7 +236,7 @@ function openCloseProduct() {
 			e.target.nextElementSibling.classList.toggle('models_active');
 		} 
 
-	})
+	})*/
 
 }
 

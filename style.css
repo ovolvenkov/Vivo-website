@@ -547,14 +547,15 @@ html.modal-active, body.modal-active {
 .models {
 	margin-top: 21px;
 	height: 0px;
-	transform: scaleY(0);
-	transition: all 1.2s;
+	opacity: 0;
+	transition: height 1s, opacity 1.2s;
 }
 
 .models_active {
 	height: 100px;
-	transform: scaleY(1);
-	transition: all 1.2s;
+	opacity: 1;
+	transition: height 1.5s, opacity 1.7s;
+
 }
 
 .contact {
