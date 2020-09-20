@@ -544,19 +544,27 @@ html.modal-active, body.modal-active {
 	margin-top: 3px;
 }
 
+
+
+
 .models {
-	margin-top: 21px;
-	height: 0px;
-	opacity: 0;
-	transition: height 1s ease, opacity 1.2s ease;
+  margin-top: 14px;
+  overflow: hidden;
+  -webkit-transition: max-height 1s ease-out, padding 1s ease-out;
+  transition: max-height 1s ease-out, padding 1s ease-out;
+  max-height: 0;
 }
 
 .models_active {
-	height: 100px;
-	opacity: 1;
-	transition: height 1.5s ease, opacity 1.7s ease;
-
+	max-height: 130px; /*изменить до максимального размера где само больше категорий*/
 }
+
+.model {
+	margin-top: 7px;
+}
+
+
+
 
 .contact {
 	transform: translateY(100%);

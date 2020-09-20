@@ -195,12 +195,11 @@ function openCloseProduct() {
 let productsList = document.querySelector(".products_list");
 let selectedElement;
 
-var iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
-var event = "click";
+let iOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
+let event = "click";
 
 if(iOS != null) event = "touchstart";
 
-console.log(event)
 
 productsList.addEventListener(event, function(e) { 
 	let target = e.target.nextElementSibling;
