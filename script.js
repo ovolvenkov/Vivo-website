@@ -192,9 +192,10 @@ burgerMenu ()
 //open-close category product
 
 function openCloseProduct() {
+let productsList = document.querySelector(".products_list");
 let selectedElement;
 
-document.addEventListener('click', function(e) { 
+productsList.addEventListener('click', function(e) { 
 	let target = e.target.nextElementSibling;
 	if (!e.target.classList.contains('icon_text')) return;
 	if (selectedElement) { // убрать существующую подсветку, если есть
@@ -208,11 +209,11 @@ document.addEventListener('click', function(e) {
   		selectedElement.classList.add('models_active'); // подсветить новый td
 
   	}
-  	 e.stopPropagation();
+
 
 })
 
-document.addEventListener('touchstart', function(e) { 
+/*productsList.addEventListener('touchstart', function(e) { 
 	let target = e.target.nextElementSibling;
 	if (!e.target.classList.contains('icon_text')) return;
 	if (selectedElement) { // убрать существующую подсветку, если есть
@@ -226,9 +227,9 @@ document.addEventListener('touchstart', function(e) {
   		selectedElement.classList.add('models_active'); // подсветить новый td
 
   	}
-  	e.stopPropagation();
 
-})
+
+})*/
 
 
 
