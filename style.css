@@ -550,13 +550,14 @@ html.modal-active, body.modal-active {
 .models {
   margin-top: 14px;
   overflow: hidden;
-  -webkit-transition: max-height 1s ease-out, padding 1s ease-out;
-  transition: max-height 1s ease-out, padding 1s ease-out;
+  -webkit-transition: max-height 0.8s ease-out;
+  transition: max-height 0.8s ease-out;
   max-height: 0;
 }
 
 .models_active {
-	max-height: 130px; /*изменить до максимального размера где само больше категорий*/
+	max-height: 113px; /*изменить до максимального размера где само больше категорий*/
+
 }
 
 .model {
