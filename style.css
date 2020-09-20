@@ -548,13 +548,13 @@ html.modal-active, body.modal-active {
 	margin-top: 21px;
 	height: 0px;
 	opacity: 0;
-	transition: height 1s, opacity 1.2s;
+	transition: height 1s ease, opacity 1.2s ease;
 }
 
 .models_active {
 	height: 100px;
 	opacity: 1;
-	transition: height 1.5s, opacity 1.7s;
+	transition: height 1.5s ease, opacity 1.7s ease;
 
 }
 
