@@ -10,8 +10,8 @@
 		<meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="icon" href="img/favicon.svg">
-		<link rel="stylesheet" type="text/css" href="reset.css">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
 
@@ -305,15 +305,14 @@
 					</div>
 				</div>
 				<div class="contact_form">
-					<form>
+					<form action="mail.php" enctype="multipart/form-data" class="form" method="POST">
 						<!-- Hidden Required Fields -->
-						<input type="hidden" name="project_name" value="Vivo Distributors">
-						<input type="hidden" name="admin_email" value="ovolvenkov@gmail.com">
-						<input type="hidden" name="form_subject" value="Contact form">
+						<input type="hidden" name="admin_email[]" value="info@vivodisributorsinc.com">
+						<input type="hidden" name="form_subject" value="Мessage from your site vivodistributorsinc.com">
 						<!-- END Hidden Required Fields -->
 
 						<input class="input input_name" type="text" name="Name" required placeholder="Your name"><br>
-						<input class="input input_phone" type="tel" name="Number" required placeholder="Phone number"><br>
+						<input class="input input_phone" type="tel" data-validate-field="tel" name="Number" required placeholder="Phone number"><br>
 						<textarea class="textarea" name="Message" placeholder="Your comment"></textarea><br>
 						<input class="btn_submit" type="submit" name="submit" value="Send">
 						<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
@@ -321,7 +320,8 @@
 					<div class="check">
 						<img class="check_img" src="img/check.svg">
 						<div class="check_text">Thank you, </br>
-						the data has been successfully sent</div>
+							the data has been successfully sent
+						</div>
 					</div>
 				</div>
 			</div>
@@ -366,17 +366,18 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.5.0/jquery.marquee.js" type="text/javascript"></script>
-		<script src="script.js"></script>
+		<script src="js/inputmask.min.js"></script>
+		<script src="js/just-validate.min.js"></script>
+		<script src="js/main.js"></script>
 
-		<!-- <script src="https://www.google.com/recaptcha/api.js?render=6Ld0eMwZAAAAAAwcfvF2CT3mMm7RROj97fab_9ki"></script> -->
-<!-- 		<script>
-			grecaptcha.ready( function () {
-				grecaptcha.execute('6Ld0eMwZAAAAAAwcfvF2CT3mMm7RROj97fab_9ki', { action: 'contact'}).then(function (token) {
-					var recaptchaResponse = document.getElementById('recaptchaResponse');
-					recaptchaResponse.value = token;
-					console.log(token)
-				});
-			});
-		</script> -->
+		<script src="https://www.google.com/recaptcha/api.js?render=6Ld0eMwZAAAAAAwcfvF2CT3mMm7RROj97fab_9ki"></script>
+		<script>
+			//grecaptcha.ready( function () {
+				//grecaptcha.execute('6Ld0eMwZAAAAAAwcfvF2CT3mMm7RROj97fab_9ki', { action: 'contact'}).then(function (token) {
+					//var recaptchaResponse = document.getElementById('recaptchaResponse');
+					//recaptchaResponse.value = token;
+				//});
+			//});
+		</script>
 	</body>
 </html>
